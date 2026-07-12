@@ -26,7 +26,7 @@ const corsOption = {
   origin: [
     'http://localhost:8000',
     'http://zuitt-bootcamp-prod-599-9467-estrecho.s3-website.us-east-1.amazonaws.com',
-    'https://capstone-3-beta.vercel.app/'
+    'https://capstone-3-beta.vercel.app'
     
   ],
   
