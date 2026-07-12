@@ -158,6 +158,26 @@ module.exports.activateProduct = (req, res) => {
     .catch(error => errorHandler(error, req, res));
 };
 
+module.exports.deleteProduct = (req, res) => {
+
+    return Product.findByIdAndDelete(req.params.productId)
+    .then(deletedProduct => {
+
+        if (!deletedProduct) {
+            return res.status(404).send({
+                message: 'Product not found'
+            });
+        }
+
+        return res.status(200).send({
+            success: true,
+            message: 'Product permanently deleted'
+        });
+
+    })
+    .catch(error => errorHandler(error, req, res));
+};
+
 //s54
 module.exports.searchByName = (req, res) => {
 
