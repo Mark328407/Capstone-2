@@ -6,7 +6,8 @@ module.exports.createProduct = (req, res) => {
     let newProduct = new Product({
         name : req.body.name,
         description : req.body.description,
-        price : req.body.price
+        price : req.body.price,
+        image : req.body.image || ''
     });
 
     
@@ -80,7 +81,8 @@ module.exports.updateProduct = (req, res)=>{
     let updatedProduct = {
         name: req.body.name,
         description: req.body.description,
-        price: req.body.price
+        price: req.body.price,
+        image: req.body.image
     }
 
     return Product.findByIdAndUpdate(req.params.productId, updatedProduct)
